@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: flowpulse-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_URL
+        sync: false
+    healthCheckPath: /health
